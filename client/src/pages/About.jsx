@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from "react";
-import axios from "axios";
+import API from "../api";
 import { FaRocket, FaImage, FaCompressAlt, FaHistory } from "react-icons/fa";
 
 function About(){
@@ -11,8 +11,8 @@ useEffect(()=>{
 
 const token = localStorage.getItem("token");
 
-  axios.get(
-    "http://localhost:5000/api/history",
+  API.get(
+    "/history",
     {headers:{Authorization:`Bearer ${token}`}}
   )
   .then(res=>setHistory(res.data))

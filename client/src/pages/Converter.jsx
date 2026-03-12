@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import axios from "axios";
+import API from "../api";
 import "../App.css";
 import {FaRocket } from "react-icons/fa";
 import { SiTicktick, SiConvertio} from "react-icons/si";
@@ -60,10 +60,10 @@ function Converter() {
     let url="";
 
     if(format==="pdf")
-      url="http://localhost:5000/api/image-to-pdf";
+      url="/image-to-pdf";
     else{
       formData.append("format",format);
-      url="http://localhost:5000/api/convert-image";
+      url="/convert-image";
     }
 
     try{
@@ -71,7 +71,7 @@ function Converter() {
       setMessage("Converting...");
       setProgress(0);
 
-      const res = await axios.post(url, formData, {
+      const res = await API.post(url, formData, {
         headers:{
           Authorization:`Bearer ${token}`
         },
