@@ -1,91 +1,242 @@
-🚀 FileConverter Pro
+# 🚀 FileConverter Pro
 
-A modern MERN Stack web application that allows users to convert and compress images instantly with a clean UI and powerful backend processing.
+A modern **MERN Stack web application** that allows users to **convert and compress images instantly** with a clean UI and powerful backend processing.
 
-Built with React, Node.js, Express, and MongoDB, this project provides fast, secure, and efficient file processing directly from your browser.
+Built with **React, Node.js, Express, and MongoDB**, this project provides fast, secure, and efficient file processing directly from your browser.
 
-🌐 Features
-🔄 Image Conversion
+---
+
+# 🌐 Features
+
+### 🔄 Image Conversion
 
 Convert images into multiple formats:
 
-PNG
+* PNG
+* JPG
+* JPEG
+* WEBP
+* PDF
 
-JPG
+---
 
-JPEG
-
-WEBP
-
-PDF
-
-🗜 Image Compression
+### 🗜 Image Compression
 
 Reduce image size using:
 
-Adjustable quality percentage
+* Adjustable **quality percentage**
+* **Target size (KB)** compression
+* Smart optimization using **Sharp**
 
-Target size (KB) compression
+---
 
-Smart optimization using Sharp
-
-📜 Conversion History
+### 📜 Conversion History
 
 Track all your previous conversions including:
 
-Original filename
+* Original filename
+* Converted format
+* Conversion records stored in MongoDB
 
-Converted format
+---
 
-Conversion records stored in MongoDB
-
-👤 Authentication System
+### 👤 Authentication System
 
 Secure login system with:
 
-User registration
+* User registration
+* JWT authentication
+* Protected API routes
 
-JWT authentication
+---
 
-Protected API routes
+### 🎨 Modern UI
 
-🎨 Modern UI
+* Responsive design
+* Gradient animated background
+* Drag & drop file upload
+* Image preview before conversion
+* Before/After compression comparison
 
-Responsive design
+---
 
-Gradient animated background
+# 🛠 Tech Stack
 
-Drag & drop file upload
+## Frontend
 
-Image preview before conversion
+* React
+* React Router
+* Axios
+* React Icons
+* CSS (Glassmorphism UI)
 
-Before/After compression comparison
+## Backend
 
-🛠 Tech Stack
-Frontend
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* Multer
+* Sharp
+* JWT Authentication
 
-React
+---
 
-React Router
+# 📂 Project Structure
 
-Axios
+```
+FileConverter-Pro
+│
+├── client
+│   ├── src
+│   │   ├── components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │── pages  
+│   │   │   ├── About.jsx
+│   │   │   ├── Compress.jsx
+│   │   │   ├── Converter.jsx
+│   │   │   ├── Landing.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   
+│   │   │
+│   │   ├── App.jsx
+│   │   └── App.css
+│   │   └── main.jsx
+│
+├── server
+│   ├── controllers
+│   │   └── convertController.js
+│   │
+│   ├── routes
+│   │   ├── convert.js
+│   │   ├── auth.js
+│   │   └── history.js
+│   │
+│   ├── middleware
+│   │   └── authMiddleware.js
+│   │
+│   ├── models
+│   │   ├── User.js
+│   │   └── Conversion.js
+│   │
+│   └── server.js
+│
+└── README.md
+```
 
-React Icons
+---
 
-CSS (Glassmorphism UI)
+# ⚙️ Installation & Setup
 
-Backend
+## 1️⃣ Clone Repository
 
-Node.js
+```
+git clone https://github.com/yourusername/fileconverter-pro.git
+cd fileconverter-pro
+```
 
-Express.js
+---
 
-MongoDB
+## 2️⃣ Install Backend Dependencies
 
-Mongoose
+```
+cd server
+npm install
+```
 
-Multer
+Create `.env`
 
-Sharp
+```
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret_key
+```
 
-JWT Authentication
+Run server:
+
+```
+node server.js
+```
+
+Server runs on:
+
+```
+http://localhost:5000
+```
+
+---
+
+## 3️⃣ Install Frontend Dependencies
+
+```
+cd client
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 📸 Screenshots
+
+## Converter
+
+Upload an image and convert into multiple formats.
+
+## Compression
+
+Reduce image size with adjustable quality.
+
+## About Page
+
+Project description, features, and conversion history.
+
+*(Add screenshots later for better GitHub presentation)*
+
+---
+
+# 🔒 Security Features
+
+* JWT authentication
+* Protected API routes
+* Environment variable protection
+* Secure file handling
+
+---
+
+# 🚀 Future Improvements
+
+Planned features:
+
+* File drag-drop progress animation
+* Download history files
+* Cloud storage integration
+* Batch image conversion
+* Dark/Light mode toggle
+* File size analytics dashboard
+
+---
+
+# 👨‍💻 Author
+
+**Subhadip Dey**
+
+* GitHub: https://github.com/Subha2707
+* LinkedIn: https://www.linkedin.com/in/subhadip-dey-7019632b7/
+
+---
+
+# ⭐ Support
+
+If you like this project:
+
+⭐ Star the repository
+🍴 Fork the repository
+
+---
