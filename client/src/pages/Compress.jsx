@@ -325,6 +325,10 @@ function Compress() {
             <ReactCompareImage
               leftImage={originalPreview}
               rightImage={compressedPreview}
+              sliderLineWidth={3}
+              sliderLineColor="#00ffcc"
+              handleSize={40}
+              hover={false}
             />
 
           </div>
