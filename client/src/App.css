@@ -37,6 +37,7 @@ body {
   padding:12px 30px;
   color:white;
   position: relative;
+  z-index: 1000;
 }
 
 .logo{
@@ -48,6 +49,7 @@ body {
 .nav-links{
   display:flex;
   gap:12px;
+  z-index: 1001;
 }
 
 .nav-links button{
@@ -83,6 +85,7 @@ body {
   padding:15px;
   border-radius:10px;
   width: 160px;
+  z-index: 2000;
 }
 
 .nav-links.open{
