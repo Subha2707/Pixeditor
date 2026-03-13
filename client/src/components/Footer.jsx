@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
 import { FaGithub, FaInstagram, FaLinkedin, FaRobot, FaRocket } from "react-icons/fa";
+import logo from "../assets/pixeditor-logo.png";
 
 function Footer() {
 
@@ -12,9 +13,14 @@ function Footer() {
     <footer className="footer">
 
       <div className="footer-container">
+        
+        <div className="footer-logo">
+            <div className="logo-circle">
+              <img src={logo}/>
+            </div>
+        </div>
 
         <div className="footer-left">
-          <h3>FileConverter</h3>
           <p>Fast image conversion & compression tools.</p>
         </div>
 

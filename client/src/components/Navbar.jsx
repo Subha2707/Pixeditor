@@ -3,6 +3,7 @@ import { FaBars, FaCompressAlt, FaExchangeAlt, FaHistory } from "react-icons/fa"
 import { MdLogout } from "react-icons/md";
 import { TbListDetails } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/pixeditor-logo.png";
 
 function Navbar() {
 
@@ -13,9 +14,13 @@ function Navbar() {
 
     <div className="navbar">
 
-      <h2 className="logo" onClick={()=>navigate("/")}>
-        FileConverter
-      </h2>
+      <div className="logo" onClick={()=>navigate("/")}>
+        <div className="logo-circle">
+          <img src={logo} alt="Pixeditor Logo" />
+        </div>
+
+        <span>Pixeditor</span>
+      </div>
 
       <div className={`nav-links ${menuOpen ? "open":""}`}>
 
