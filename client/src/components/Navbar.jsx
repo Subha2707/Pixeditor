@@ -28,7 +28,7 @@ function Navbar() {
         <button
           onClick={()=>{
             localStorage.removeItem("token");
-            navigate("/login");
+            navigate("/");
           }}
         >
           <MdLogout /> Logout

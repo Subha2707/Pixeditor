@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Landing from "./pages/Landing";
 import Compress from "./pages/Compress";
 import About from "./pages/About";
+import ProtectedRoute from "./components/ProtectredRoute";
 
 function App(){
 
@@ -22,11 +23,26 @@ return(
     <Routes>
 
       <Route path="/" element={<Landing/>}/>
-      <Route path="/convert" element={<Converter/>}/>
       <Route path="/about" element={<About/>}/>
-      <Route path="/compress" element={<Compress/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
+
+      <Route 
+        path="/convert" 
+        element={
+          <ProtectedRoute>
+            <Converter/>
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path="/compress" 
+        element={
+          <ProtectedRoute>
+            <Compress/>
+          </ProtectedRoute>
+        }
+      />
 
     </Routes>
   </div>
