@@ -3,6 +3,20 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+const fs = require("fs");
+const path = require("path");
+
+const uploadDir = path.join(process.cwd(), "uploads");
+const convertedDir = path.join(process.cwd(), "converted");
+
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
+if (!fs.existsSync(convertedDir)) {
+  fs.mkdirSync(convertedDir);
+}
+
 const convertRoutes = require("./routes/convert");
 const authRoutes = require("./routes/auth");
 const historyRoutes = require("./routes/history");

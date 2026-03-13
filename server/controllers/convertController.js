@@ -18,7 +18,7 @@ exports.convertImage = async (req, res) => {
       return res.status(400).json({ message: "Not an image file" });
     }
 
-    const outputPath = `converted/${Date.now()}.${format}`;
+    const outputPath = path.join("converted", `${Date.now()}.${format}`);
 
     await sharp(req.file.path)
       .toFormat(format)
@@ -32,8 +32,8 @@ exports.convertImage = async (req, res) => {
     });
 
     res.download(outputPath, ()=>{
-      fs.unlink(req.file.path, ()=>{});
-      fs.unlink(outputPath, ()=>{});
+      if (fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
+      if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
     });
 
   } catch (error) {
@@ -67,7 +67,7 @@ exports.imageToPdf = async (req, res) => {
 
     const pdfBytes = await pdfDoc.save();
 
-    const outputPath = `converted/${Date.now()}.pdf`;
+    const outputPath = path.join("converted",`${Date.now()}.pdf`);
 
     fs.writeFileSync(outputPath, pdfBytes);
 
@@ -79,8 +79,8 @@ exports.imageToPdf = async (req, res) => {
     });
 
     res.download(outputPath, ()=>{
-      fs.unlink(req.file.path, ()=>{});
-      fs.unlink(outputPath, ()=>{});
+      if (fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
+      if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
     });
 
   } catch (error) {
@@ -101,7 +101,7 @@ exports.compressImage = async (req, res) => {
 
     const inputPath = req.file.path;
 
-    const outputPath = `converted/${Date.now()}.jpg`;
+    const outputPath = path.join("converted",`/${Date.now()}.jpg`);
 
     let quality = parseInt(req.body.quality || 80);
 
@@ -137,8 +137,8 @@ exports.compressImage = async (req, res) => {
 
     res.download(outputPath, () => {
 
-      fs.unlink(inputPath, () => {});
-      fs.unlink(outputPath, () => {});
+      if (fs.existsSync(req.file.path)) fs.unlinkSync(req.file.path);
+      if (fs.existsSync(outputPath)) fs.unlinkSync(outputPath);
 
     });
 

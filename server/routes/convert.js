@@ -13,7 +13,7 @@ const auth = require("../middleware/authMiddleware");
 const router = express.Router();
 
 const storage = multer.diskStorage({
-  destination: "uploads/",
+  destination: path.join(process.cwd(),"uploads"),
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   }
