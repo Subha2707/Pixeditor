@@ -40,17 +40,20 @@ body {
   z-index: 1000;
 }
 
+/* Desktop */
+
 .logo{
   display:flex;
-  align-items: center;
-  gap: 15px;
+  align-items:center;
+  gap:15px;
   cursor:pointer;
 }
+
 .logo-circle{
-  width:100px;
-  height:100px;
+  width:80px;
+  height:80px;
   border-radius:50%;
-  overflow: hidden;
+  overflow:hidden;
   background:linear-gradient(135deg,#00c6ff,#6a11cb);
   display:flex;
   justify-content:center;
@@ -59,14 +62,48 @@ body {
 }
 
 .logo-circle img{
-  width:100px;
-  height:100px;
+  width:100%;
+  height:100%;
   object-fit:cover;
 }
 
 .logo span{
-  font-size:60px;
+  font-size:42px;
   font-weight:bold;
+}
+
+
+/* Tablet */
+
+@media (max-width:1024px){
+
+.logo-circle{
+  width:60px;
+  height:60px;
+}
+
+.logo span{
+  font-size:32px;
+}
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+.logo{
+  gap:10px;
+}
+
+.logo-circle{
+  width:45px;
+  height:45px;
+}
+
+.logo span{
+  font-size:24px;
+}
+
 }
 
 .nav-links{
