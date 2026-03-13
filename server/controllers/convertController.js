@@ -1,4 +1,5 @@
 const sharp = require("sharp");
+const path = require("path");
 const fs = require("fs");
 const { PDFDocument } = require("pdf-lib");
 const mime = require("mime-types");
@@ -18,7 +19,7 @@ exports.convertImage = async (req, res) => {
       return res.status(400).json({ message: "Not an image file" });
     }
 
-    const outputPath = path.join("converted", `${Date.now()}.${format}`);
+    const outputPath = path.join(process.cwd(), "converted", `${Date.now()}.${format}`);
 
     await sharp(req.file.path)
       .toFormat(format)
@@ -67,7 +68,7 @@ exports.imageToPdf = async (req, res) => {
 
     const pdfBytes = await pdfDoc.save();
 
-    const outputPath = path.join("converted",`${Date.now()}.pdf`);
+    const outputPath = path.join(process.cwd(), "converted",`${Date.now()}.pdf`);
 
     fs.writeFileSync(outputPath, pdfBytes);
 
@@ -101,7 +102,7 @@ exports.compressImage = async (req, res) => {
 
     const inputPath = req.file.path;
 
-    const outputPath = path.join("converted",`/${Date.now()}.jpg`);
+    const outputPath = path.join(process.cwd(), "converted",`${Date.now()}.jpg`);
 
     let quality = parseInt(req.body.quality || 80);
 
